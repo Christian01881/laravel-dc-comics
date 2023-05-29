@@ -1,0 +1,44 @@
+@use './partials/variables' as *;
+
+$fa-font-path: "../fonts/webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import "~bootstrap/scss/bootstrap";
+
+
+.card{
+    width: calc((100% / 3) - 30px);
+}
+
+.img-w{
+    min-width: 400px;
+    min-height: 500px;
+    max-height: 500px
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    color: blue;
+}
+
+.section{
+    min-width: 30%;
+}
+
+.section-2{
+    min-width: 70%;
+
+}
+
+.section img{
+    width: 100%;
+}
+
