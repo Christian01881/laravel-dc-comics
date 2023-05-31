@@ -5,7 +5,7 @@
 @section('content')
     <main class="d-flex">
         <div class="section">
-            <img src="{{ $comic->thumb }}" alt="">
+            <img src="{{ trim($comic->thumb) }}" alt="">
         </div>
         <div class="section-2">
             <h3>Titolo {{ $comic->title }}</h3>
