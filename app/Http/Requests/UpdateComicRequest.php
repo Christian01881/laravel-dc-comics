@@ -13,7 +13,7 @@ class UpdateComicRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class UpdateComicRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:255|min:3',
+            'thumb' => 'required|max:255',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => "Il titolo è obbligatorio",
+            'title.max' => "Il tittolo non deve superare 255 caratteri",
+            'title.min' => "Il titolo deve contenere almano 3 caratteri",
+            'thumb.required' => "Devi inserire la url di una immagine",
+            'thumb.max' => "La url dell'immagine deve essere di massimo 255 caratteri",
         ];
     }
 }

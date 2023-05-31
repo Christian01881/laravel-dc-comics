@@ -9,7 +9,14 @@
             <div class="row mb-3">
                 <div class="col-6">
                     <label for="title" class="form-label">Title</label>
-                    <input required name="title" type="text" class="form-control" id="title">
+                    <input required name="title" type="text" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" required min="3" maxlength="255" id="title">
+                    <div id="titleHelp" class="form-text">Inserisci un titolo - required - minimo 3 caratteri massimo 255
+                        caratteri</div>
+                    @error('title')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-6">
                     <label for="thumb" class="form-label">Image url</label>
