@@ -20,10 +20,10 @@
                 </div>
                 <div class="col-6">
                     <label for="thumb" class="form-label" value="{{ old('thumb') }}">Image url</label>
-                    <input required name="thumb" type="text" class="form-control @error('title') is-invalid @enderror" required maxlength="255" id="thumb" aria-describedby="thumbHelp">
+                    <input required name="thumb" type="text" class="form-control @error('thumb') is-invalid @enderror" required maxlength="255" id="thumb" aria-describedby="thumbHelp">
                     <div id="thumbHelp" class="form-text">Inserisci un URL con 255 caratteri massimo.
                         caratteri</div>
-                    @error('title')
+                    @error('thumb')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
@@ -55,7 +55,7 @@
             </div>
             <div class="row mb-3 ">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                <textarea class="form-control" name="description" id="description" value="{{ old('description') }}" cols="30" rows="10"></textarea>
             </div>
             <div class="d-flex justify-content-center mb-3 gap-3">
                 <button type="submit" class="btn btn-primary">Add comic</button>

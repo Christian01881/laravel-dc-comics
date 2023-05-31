@@ -25,7 +25,13 @@ class StoreComicRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255|min:3',
-            'image' => 'required|max:255',
+            'thumb' => 'required|max:255',
+            'description' => 'required|min:3',
+            'price' => 'required|min:3',
+            'series' => 'required|max:255|min:3',
+            'sale_date' => 'required',
+            'type' => 'required|min:3',
+
         ];
     }
 
@@ -37,6 +43,16 @@ class StoreComicRequest extends FormRequest
             'title.min' => "Il titolo deve contenere almano 3 caratteri",
             'thumb.required' => "Devi inserire la url di una immagine",
             'thumb.max' => "La url dell'immagine deve essere di massimo 255 caratteri",
+            'description.required' => "lobbligatorio",
+            'description.min' => "a descrizione deve avere minimo 3 caratteri",
+            'price.required' => "obbligatorio",
+            'price.min' => "inserire un numero con almeno 2 cifre dopo il punto",
+            'series.required' => "obbligatorio",
+            'series.min' => "Deve essere composto da almeno 3 caratteri",
+            'series.max' => "Deve essere composto da non più di 255 caratteri",
+            'sale_date.required' => "inerire una data",
+            'type.required' => "obbligatorio",
+            'type.min' => "Deve contenere almeno 3 caratteri"
         ];
     }
 }
