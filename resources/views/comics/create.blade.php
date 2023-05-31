@@ -9,7 +9,7 @@
             <div class="row mb-3">
                 <div class="col-6">
                     <label for="title" class="form-label">Title</label>
-                    <input required name="title" type="text" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" required min="3" maxlength="255" id="title">
+                    <input required name="title" type="text" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" required min="3" maxlength="255" id="title" aria-describedby="titleHelp">
                     <div id="titleHelp" class="form-text">Inserisci un titolo - required - minimo 3 caratteri massimo 255
                         caratteri</div>
                     @error('title')
@@ -19,8 +19,16 @@
                     @enderror
                 </div>
                 <div class="col-6">
-                    <label for="thumb" class="form-label">Image url</label>
-                    <input required name="thumb" type="text" class="form-control" id="thumb">
+                    <label for="thumb" class="form-label" value="{{ old('thumb') }}">Image url</label>
+                    <input required name="thumb" type="text" class="form-control @error('title') is-invalid @enderror" required maxlength="255" id="thumb" aria-describedby="thumbHelp">
+                    <div id="thumbHelp" class="form-text">Inserisci un URL con 255 caratteri massimo.
+                        caratteri</div>
+                    @error('title')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
                 </div>
             </div>
             <div class="row mb-3">
