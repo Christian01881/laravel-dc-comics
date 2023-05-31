@@ -24,8 +24,8 @@ class StoreComicRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:255|min:3',
-            'thumb' => 'required|max:255',
+            'title' => 'required|max:100|min:3',
+            'thumb' => 'required',
             'description' => 'required|min:3',
             'price' => 'required|min:3',
             'series' => 'required|max:255|min:3',
@@ -39,10 +39,9 @@ class StoreComicRequest extends FormRequest
     {
         return [
             'title.required' => "Il titolo è obbligatorio",
-            'title.max' => "Il tittolo non deve superare 255 caratteri",
+            'title.max' => "Il tittolo non deve superare 100 caratteri",
             'title.min' => "Il titolo deve contenere almano 3 caratteri",
             'thumb.required' => "Devi inserire la url di una immagine",
-            'thumb.max' => "La url dell'immagine deve essere di massimo 255 caratteri",
             'description.required' => "lobbligatorio",
             'description.min' => "a descrizione deve avere minimo 3 caratteri",
             'price.required' => "obbligatorio",
